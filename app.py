@@ -3,8 +3,8 @@ from flask import Flask, render_template, request
 import pickle
 
 app_3 = Flask(__name__, template_folder='templates')
-path = r'C:\Users\Ирина\PycharmProjects\VKR\model\model.pkl'
-url = r'C:\Users\Ирина\Desktop\DATA SCIENCE\ВКР\HTML\background.jpg'
+path = r'D:\PROJECTS\VKR\model.pkl'
+url = r'D:\PROJECTS\VKR\html\background.jpg'
 model = pickle.load(open(path, 'rb'))
 
 
