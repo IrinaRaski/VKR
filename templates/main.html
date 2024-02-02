@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    body{
+            background-image: url(url);
+            background-repeat: no-repeat;
+            background-position: center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+    }
+    form {
+        margin: auto;
+        width: 35%;
+    }
+
+    .result {
+        margin: auto;
+        width: 35%;
+        border: 1px solid #ccc;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Рекомендация</title>
+</head>
+<body>
+<br>
+<br>
+<h1 style="font-size:25px" align="center">
+    Рекомендация параметра
+    <br>
+    «Соотношение матрица-наполнитель»
+</h1>
+
+<form action="{{url_for('main')}}" method="POST">
+    <fieldset>
+        <legend style="font-size:20px; font-weight: 600" align="center"> Введите значения свойств композитов </legend>
+            <table>
+                <tr>
+                    <td align="right">Плотность, кг/м3:</td>
+                    <td align="left"><input type = "number" step="any" name='1' value="<?=$'1?>" required/></td>
+                <tr>
+                    <td align="right">модуль упругости, ГПа:</td>
+                    <td align="left"><input type = "number" step="any" name='модуль упругости, ГПа' required /></td>
+                </tr>
+                <tr>
+                    <td align="right">Количество отвердителя, м.%:</td>
+                    <td align="left"><input type="number" step="any" name='Количество отвердителя, м.%' required/></td>
+                </tr>
+                <tr>
+                    <td align="right">Содержание эпоксидных групп, %_2:</td>
+                    <td align="left"><input type="number" step="any" name='Содержание эпоксидных групп, %_2' required /></td>
+                </tr>
+                <tr>
+                    <td align="right">Температура вспышки, С_2:</td>
+                    <td align="left"><input type="number" step="any" name='Температура вспышки, С_2' required /></td>
+                </tr>
+                <tr>
+                    <td align="right">Поверхностная плотность, г/м2:</td>
+                    <td align="left"><input type="number" step="any" name='Поверхностная плотность, г/м2' required /></td>
+                </tr>
+                <tr>
+                    <td align="right">Модуль упругости при растяжении, ГПа:</td>
+                    <td align="left"><input type="number" step="any" name='Модуль упругости при растяжении, ГПа' required /></td>
+                </tr>
+                <tr>
+                    <td align="right">Прочность при растяжении, МПа:</td>
+                    <td align="left"><input type="number" step="any" name='Прочность при растяжении, МПа' required /></td>
+                </tr>
+                <tr>
+                    <td align="right">Потребление смолы, г/м2:</td>
+                    <td align="left"><input type="number" step="any" name='Потребление смолы, г/м2' required /></td>
+                </tr>
+                <tr>
+                    <td align="right">Угол нашивки, град:</td>
+                    <td>
+                        <input list="angle" name="Угол нашивки, град" placeholder="Выберите значение" required />
+                        <datalist id="angle">
+                            <option value="0">0</option>
+                            <option value="90">90</option>
+                        </datalist>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">Шаг нашивки:</td>
+                    <td align="left"><input type="number" step="any" name='Шаг нашивки' required /></td>
+                </tr>
+                <tr>
+                    <td align="right">Плотность нашивки:</td>
+                    <td align="left"><input type="number" step="any" name='experience' required /></td>
+                </tr>
+                </table>
+        <br>
+        <br>
+        <input style="float:right" type = "submit" value="Рассчитать"/>
+        <input type="reset" value="Очистить" />
+    </fieldset>
+</form>
+<div class="message" align="center">
+    {% if result %}
+    <br>
+    <p style="font-size:35px">
+        Соотношение матрица-наполнитель составляет
+    </p>
+    <p style="font-size:35px"> {{result}}
+    </p>
+    {% endif %}
+</div>
+</body>
+</html>
