@@ -18,3 +18,4 @@ def main():
         prediction = model.predict(x_new).flatten()
         result = f'{str(prediction)[1:-1]}'
         return render_template('main.html', result=result)
+
