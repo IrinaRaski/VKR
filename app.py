@@ -1,8 +1,6 @@
 import numpy as np
 from flask import Flask, render_template, request
 import pickle
-import os
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 app = Flask(__name__, template_folder='templates')
 path = r'model/model.pkl'
@@ -21,3 +19,6 @@ def main():
         result = f'{str(prediction)[1:-1]}'
         return render_template('main.html', result=result)
 
+
+if __name__ == '__main__':
+    app.run()
